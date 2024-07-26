@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SreeRamaPrasad General Stores</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form{
+           width: 350px;
+           height: 450px;
+           background-color: #fff;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 30px;
+           gap:10px;
+
+        }
+        input:focus{
+            border-color: rgb(43, 227, 202);
+        }
+
+        .field{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 5px 0px;
+
+        }
+        .field input{
+            width: 100%;
+            border: 2px solid #93899e91;
+            border-radius:5px;
+            padding: 10px;  
+        }
+        button{
+            border: none;
+            outline: none;
+            background-color: black;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        button:hover{
+            opacity: 1;
+        }
+        
+    </style>    
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <div class="form">
+        <form onsubmit="navigate(this)">
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="xyz@gmail.com">
+               </div>
+               <div class="field">
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwd" placeholder="********">
+               </div>
+              <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
