@@ -18,7 +18,8 @@ function navigate(form){
       "firstName": "Nihira",
       "lastName": "Malipeddi",
       "Aadharnumber":139792,
-      "PANnumber":13793
+      "PANnumber":13793,
+      "Gender":"Female"
     },
     {
     //Account Fields
