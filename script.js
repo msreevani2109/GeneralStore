@@ -22,8 +22,8 @@ function navigate(form){
     },
     {
     //Account Fields
-      "id":"Apple", //Required
-      "name":"Apple Mac",
+      "id":"SVNE", //Required
+      "name":"MBU",
       "MSVID1" : ""
   });
       alert("logged in succesfully" );
