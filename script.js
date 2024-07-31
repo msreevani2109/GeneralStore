@@ -34,3 +34,7 @@ function navigate(form){
 function deleteAllCookies(){
   aptrinsic("reset");
 }
+
+function SendData(){
+  alert("form submitted,thank you!");
+}

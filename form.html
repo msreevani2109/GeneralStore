@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Submit Query</title>
+        <script src="script.js"></script>
+        <!--External Style sheet-->
+        <link rel="stylesheet" href="style.css" >
+
+        <!--For responsive webpage-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src *.aptrinsic.com; script-src *.aptrinsic.com; style-src *.aptrinsic.com 'unsafe-inline' fonts.googleapis.com; img-src *.aptrinsic.com storage.googleapis.com; font-src fonts.gstatic.com;">-->
+        <!--Bootstrap link-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+
+    <body class="container" >
+        <div >
+            <nav class="navbar navbar-expand-sm bg-light navbar-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html"> Home</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html"> About</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="contact.html"> Query</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html" onclick="deleteAllCookies()"> Log Out</a>
+                    </li>
+                  </ul>
+            </nav>
+        </div>
+        <div class="container card">
+            <div class="text-center">Submit your Query</div><hr>
+            <form>
+                <div class="form-group" unselectable="off">
+                    <label for="name">Name</label><br>
+                    <input class="form-control" formcontrolname="Name" type="text" id="name" placeholder="Enter Name" >
+                </div>
+                <div class="form-group">
+                    <label for="Employee ID">Employee Id</label><br>
+                    <input class="form-control" formcontrolname="strokewidth" type="number" id="Employee ID" placeholder="Enter ID" >
+                </div>
+                <div class="form-group" unselectable="on">
+                    <label for="Email">Email</label><br>
+                    <input class="form-control" type="email" id="Email" placeholder="Enter a valid Mail ID">
+                </div>
+                  <label><input type="checkbox" role="checkbox" class="checkbox__input" id="increased-growth-checkbox" aria-disabled="false" aria-readonly="false" aria-checked="false" aria-required="false" aria-invalid="false" aria-errormessage="rx-checkbox-error-message-id-2" data-testid="increased-growth-checkbox"><div class="checkbox__item"><span class="icon-indeterminate"></span><span class="ng-star-inserted">Increase percentage</span><!----><!----><!----><!----><!----><!----></div></label>
+                <div class="form-group">
+                    <label for="Issue category">Issue category</label><br>
+                    <select class="form-control" id="Issue category" onchange="SubcategoryDropdown()" required>
+                        <option style="display: none;">Issue Category</option>
+                        <option value="JO" >JO</option>
+                        <option value="Rules">Rules</option>
+                        <option value="Cockpit">Cockpit</option>
+                    </select>
+                </div>
+
+                <div id="JO" style="display:none;">
+                    <label for="JO subcategory">Issue subcategory</label><br>
+                    <select class="form-control" id="JO subcategory" required>
+                        <option style="display: none;">Issue subCategory</option>
+                        <option value="Email Templates" >Email Templates</option>
+                        <option value="Programs">Programs</option>
+                        <option value="Analytics">Analytics</option>
+                    </select>
+                </div>
+
+                <div id="Rules" style="display:none;">
+                    <label for="Rules subcategory">Issue subcategory</label><br>
+                    <select class="form-control" id="Rules subcategory" required>
+                        <option style="display: none;">Issue subCategory</option>
+                        <option value="S3 import" >S3 import</option>
+                        <option value="Rule Failure">Rule Failure</option>
+                        <option value="Setting up action">Setting up action</option>
+                    </select>
+                </div>
+
+                <div id="Cockpit" style="display:none;">
+                    <label for="Cockpit subcategory">Issue subcategory</label><br>
+                    <select class="form-control" id="Cockpit subcategory" required>
+                        <option style="display: none;">Issue subCategory</option>
+                        <option value="CTA Creation" >CTA Creation</option>
+                        <option value="CTA administration">CTA administration</option>
+                    </select>
+                </div>
+                <div class="form-group" unselectable="on">
+                    <label for="notes">More Notes</label><br>
+                    <textarea id="notes" type="text" placeholder="Tell us more about the issue"></textarea>
+                </div>
+                <button type="button" class="btn btn-success profileInfoForSource" onclick="SendData()">Submit</button>
+                
+            </form>
+        </div>
+        <!--JS link-->
+        <script src="script.js"></script>
+    </body>
+
+
+
+</html>
