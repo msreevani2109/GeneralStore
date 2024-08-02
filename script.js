@@ -31,6 +31,9 @@ function navigate(form){
     form.action = "home.html";
 }
 
+function handleButtonClick(){
+  aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
+}
 function deleteAllCookies(){
   aptrinsic("reset");
 }
