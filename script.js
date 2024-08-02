@@ -23,8 +23,8 @@ function navigate(form){
     },
     {
     //Account Fields
-      "id":"SVNE", //Required
-      "name":"MBU",
+      "id":"INFY", //Required
+      "name":"INFOSYS",
       "MSVID1" : ""
   });
       alert("logged in succesfully" );
