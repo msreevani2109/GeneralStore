@@ -38,3 +38,8 @@ function deleteAllCookies(){
 function SendData(){
   alert("form submitted,thank you!");
 }
+
+
+function trackData(){
+  aptrinsic("track","GSCE2",{"name":"sree","country":document.getElementById("dropdown").value});
+}
