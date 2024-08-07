@@ -6,17 +6,24 @@
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-EINSODADBSWN-2");
 //Gainsight PX Tag - end
 
+function getLastName(){
+  const alphabet = 'ABCDEFGHIJKLMNOPRSTUVW';
+  const randomIndex = Math.floor(Math.random()*alphabet.length);
+  return alphabet[randomIndex];
+}
 function navigate(form){
   var username = document.getElementById("username").value;
   var id = username.substring(0,4);
+  var name = username.split("@")[0];
+  var lname = getLastName();
   //passing user and account objects:
   aptrinsic("identify",
     {
     //User Fields
       "id": id, // Required for logged in app users
       "email": username,
-      "firstName": "Nihira",
-      "lastName": "Malipeddi",
+      "firstName": name,
+      "lastName": lname,
       "Aadharnumber":139792,
       "PANnumber":13793,
       "gender":"Female",
