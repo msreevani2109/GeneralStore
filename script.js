@@ -44,8 +44,11 @@ function navigate(form){
       alert("logged in succesfully" );
     form.action = "home.html";
 }
-document.getElementById("apt-custom-close").onclick = function(){
-  aptrinsic('track','apt-custom-close',{"clicked":"yes"});
+var custEle = document.getElementById("apt-custom-close");
+if(custEle){  
+  custEle.onclick = function(){
+     aptrinsic('track','apt-custom-close',{"clicked":"yes"});
+  }
 }
 function handleYes(){
   aptrinsic('track','track-yes',{"respose":"yes"});
