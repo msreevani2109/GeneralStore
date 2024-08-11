@@ -44,7 +44,12 @@ function navigate(form){
       alert("logged in succesfully" );
     form.action = "home.html";
 }
-
+function handleYes(){
+  
+}
+function handleNo(){
+  
+}
 function handleButtonClick(){
   aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
 }
