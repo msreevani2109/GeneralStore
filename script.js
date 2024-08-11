@@ -45,10 +45,10 @@ function navigate(form){
     form.action = "home.html";
 }
 function handleYes(){
-  aptrinsic('track','track-response',{"respose":"yes"});
+  aptrinsic('track','track-yes',{"respose":"yes"});
 }
 function handleNo(){
-  aptrinsic('track','track-response',{"respose":"no"});
+  aptrinsic('track','track-no',{"respose":"no"});
 }
 function handleBoth(){
   aptrinsic('track','track-both',"true");
