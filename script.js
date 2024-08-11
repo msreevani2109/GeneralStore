@@ -45,10 +45,10 @@ function navigate(form){
     form.action = "home.html";
 }
 function handleYes(){
-  
+  aptrinsic('track','track-response',{"respose":"yes"});
 }
 function handleNo(){
-  
+  aptrinsic('track','track-response',{"respose":"no"});
 }
 function handleButtonClick(){
   aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
