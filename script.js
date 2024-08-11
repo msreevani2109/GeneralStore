@@ -50,6 +50,9 @@ function handleYes(){
 function handleNo(){
   aptrinsic('track','track-response',{"respose":"no"});
 }
+function handleBoth(){
+  aptrinsic('track','track-both',"true");
+}
 function handleButtonClick(){
   aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
 }
