@@ -80,7 +80,10 @@ function SendData(){
   alert("form submitted,thank you!");
 }
 
-
+function storeValues(){
+    aptrinsic('track','amount',{"amountentered":document.getElementById('amount').value});
+    aptrinsic('track','interest',{"interestentered":document.getElementById('interest').value});
+}
 function trackData(){
   aptrinsic("track","GSCE2",{"name":"sree","country":document.getElementById("dropdown").value});
 }
