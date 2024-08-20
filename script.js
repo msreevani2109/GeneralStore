@@ -87,3 +87,6 @@ function storeValues(){
 function trackData(){
   aptrinsic("track","GSCE2",{"name":"sree","country":document.getElementById("dropdown").value});
 }
+function setGlobalContext(context){
+    aptrinsic('set', 'globalContext', {"role":context});
+}
