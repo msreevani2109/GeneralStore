@@ -20,9 +20,6 @@ function CallVisitorIdentify(){
   });
 //Gainsight PX Tag - end
 
-function handleCustomEvent(){
-    aptrinsic("track","admince",{"admin":"yes"});
-}
 function getLastName(){
   const alphabet = 'ABCDEFGHIJKLMNOPRSTUVW';
   const randomIndex = Math.floor(Math.random()*alphabet.length);
@@ -76,6 +73,9 @@ function handleBoth(){
 }
 function handleButtonClick(){
   aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
+}
+function handleCustomEvent(){
+  aptrinsic('track','admince',{"admin":"yes"});
 }
 function deleteAllCookies(){
   aptrinsic("reset");
