@@ -58,10 +58,6 @@ function navigate(form){
       alert("logged in succesfully" );
     form.action = "home.html";
 }
-var custEle = document.getElementById("apt-custom-close"); 
-custEle.onclick = function(){
-     aptrinsic('track','apt-custom-close',{"clicked":"yes"});
-  }
 function handleYes(){
   aptrinsic('track','track-yes',{"respose":"yes"});
 }
