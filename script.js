@@ -95,3 +95,7 @@ function trackData(){
 function setGlobalContext(context){
     aptrinsic('set', 'globalContext', {"role":context});
 }
+
+function handleQuery(){
+    aptrinsic('track',"Connect Project selected");
+}
