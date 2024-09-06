@@ -26,7 +26,8 @@
     <button id="btn-yes" onclick="handleYes()">Yes</button>
     <button id="btn-No" onclick="handleNo()">No</button>
     <button id="btn-both" onclick="handleBoth()">both</button>
-    <button data-role="admin" onclick="handleCustomEvent()">Admin</button>
+    <button data-role="admin" id="adm" onclick="handleCustomEvent('admin')">Admin</button>
+    <button data-role="manager" id= "mgr" onclick="handleCustomEvent('manager')">Admin</button>
     <div class="parent">
           Parent
         <div class="child">
