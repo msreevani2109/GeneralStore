@@ -74,8 +74,14 @@ function handleBoth(){
 function handleButtonClick(){
   aptrinsic('track', 'gscr2', {"name":"second rule","value":2});
 }
-function handleCustomEvent(){
-  aptrinsic('track','admince',{"admin":"yes"});
+function handleCustomEvent(role){
+    if(role=="admin"){
+        aptrinsic('track','admince',{"admin":"yes"});
+    }
+    else{
+        aptrinsic('track','admince',{"admin":"no"});
+    }
+  
 }
 function deleteAllCookies(){
   aptrinsic("reset");
