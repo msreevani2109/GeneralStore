@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey</title>
     <link rel="stylesheet" href="style.css"/>
+    <style>
+        .custom-checkbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top:50px;
+        }
+    </style>
     <script src="script.js"></script>
 </head>
 <body>
@@ -19,15 +28,15 @@
         </ul>
     </div>
     <div class="custom-checkbox">
+        <input type="checkbox" style="display: block;margin-right:4px;" data-label="heathcare">
          <label>
-           <input type="checkbox" style="display: block;">
-           Checkbox with display: block
+           <strong>heathcare</strong> 
           </label>  
     </div>
    <div class="custom-checkbox">
+    <input type="checkbox" style="display: none;margin-right: 4px;" data-label="hightech">
      <label>
-        <input type="checkbox" style="display: none;">
-        Checkbox with display: none
+        <strong>hightech</strong>
     </label>
    </div>
 </body>
