@@ -3,58 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .ticket-container {
-            display: flex;
-            gap: 20px;
-        }
-        .ticket {
-            width: 100px;
-            height: 150px;
-            background-color: #2d87f0;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-        .ticket:hover {
-            background-color: #006bb3;
-        }
-    </style>
+    <title>Ticket Viewer</title>
+    <link rel="stylesheet" href="ticketstyles.css">
 </head>
 <body>
 
-    <div class="ticket-container">
-        <div class="ticket" onclick="changeTicket(1)">Ticket 1</div>
-        <div class="ticket" onclick="changeTicket(2)">Ticket 2</div>
-        <div class="ticket" onclick="changeTicket(3)">Ticket 3</div>
-        <div class="ticket" onclick="changeTicket(4)">Ticket 4</div>
-        <div class="ticket" onclick="changeTicket(5)">Ticket 5</div>
-    </div>
+    <header>
+        <h1>Welcome to the Ticket System</h1>
+    </header>
 
-    <script>
-        // Function to change the URL based on ticket ID
-        function changeTicket(ticketId) {
-            // Redirect to ticketdetails.html with the ticket ID as a path parameter
-            // window.location.href = `/ticketdetails.html/${ticketId}`;
-            window.location.href = `/GeneralStore/ticketdetails.html?${ticketId}`;
-        }
-    </script>
+    <nav>
+        <ul>
+            <li><a href="ticket/123">Ticket 123</a></li>
+            <li><a href="ticket/456">Ticket 456</a></li>
+            <li><a href="ticket/789">Ticket 789</a></li>
+        </ul>
+    </nav>
 
+    <section id="ticket-details">
+        <h2>Ticket Details</h2>
+        <p id="ticket-id">Loading ticket details...</p>
+        <p id="ticket-description">Please select a ticket.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ticket System</p>
+    </footer>
+
+    <script src="ticketscript.js"></script>
 </body>
 </html>
