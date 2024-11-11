@@ -50,9 +50,8 @@
     <script>
         // Function to change the URL based on ticket ID
         function changeTicket(ticketId) {
-            // Update the browser's URL without reloading the page
-            window.history.pushState({}, '', `/ticket/${ticketId}`);
-            console.log(`Ticket ${ticketId} selected! URL changed to: /ticket/${ticketId}`);
+            // Redirect to ticketdetails.html with the ticket ID as a path parameter
+            window.location.href = `/ticketdetails/${ticketId}`;
         }
     </script>
 

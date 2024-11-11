@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .ticket-details {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ticket-details">
+        <h1>Ticket Details</h1>
+        <p id="ticket-id">Loading ticket details...</p>
+    </div>
+
+    <script>
+        // Get the ticket ID from the URL path (e.g., /ticketdetails/1)
+        const pathParts = window.location.pathname.split('/');
+        const ticketId = pathParts[pathParts.length - 1]; // Last part of the path
+
+        // Display the ticket ID (You can replace this with more specific ticket details)
+        if (ticketId) {
+            document.getElementById('ticket-id').innerText = `Details for Ticket ${ticketId}`;
+        } else {
+            document.getElementById('ticket-id').innerText = 'Ticket ID not found';
+        }
+    </script>
+
+</body>
+</html>
