@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Example</title>
+    <style>
+        /* Target .d-flex inside anchor with href="#ai-summary-control" */
+        [href="#ai-summary-control"] .d-flex {
+            background-color: lightblue;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling for the section we are scrolling to */
+        #ai-summary-control {
+            margin-top: 100vh; /* Make it far enough down to scroll */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            font-size: 1.5em;
+        }
+
+        /* Optional: add some space above the page content to make scrolling noticeable */
+        body {
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Anchor with href="#ai-summary-control" -->
+    <a href="#ai-summary-control">
+        <div class="d-flex">
+            <p>Click here to scroll to the section with id="ai-summary-control".</p>
+        </div>
+    </a>
+
+    <!-- Another div with the same .d-flex class, but outside of the anchor, won't be styled -->
+    <div class="d-flex">
+        <p>This div is outside the anchor and won't be styled by the CSS selector.</p>
+    </div>
+
+    <!-- This is the section we're scrolling to -->
+    <div id="ai-summary-control">
+        <h2>AI Summary Control Section</h2>
+        <p>This is the section with id="ai-summary-control".</p>
+    </div>
+
+</body>
+</html>
