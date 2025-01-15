@@ -25,17 +25,17 @@ function getLastName(){
   const randomIndex = Math.floor(Math.random()*alphabet.length);
   return alphabet[randomIndex];
 }
-function getAccount(){
-  let accounts = ["IBM","INFOSYS","Gainsight","MBU","TCS","Deloitte"];
-  const randomIndex = Math.floor(Math.random()*accounts.length);
-  return accounts[randomIndex]; 
+function getAccount(accountid){
+  const aid = accountid.toLowerCase();
+  return aid;
 }
 function navigate(form){
   var username = document.getElementById("username").value;
+  var accountid = document.getElementById("aid").value;
   var id = username.substring(0,4);
   var name = username.split("@")[0];
   var lname = getLastName();
-  var act = getAccount();
+  var act = getAccount(accountid);
   //passing user and account objects:
   aptrinsic("identify",
     {
