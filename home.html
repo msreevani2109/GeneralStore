@@ -14,8 +14,11 @@
      // Perform a hard refresh
      location.reload(true); // Force a reload from the server (hard refresh)
    }
-  // Call the function every 5 seconds
-  setInterval(deleteAllCookiesAndRefresh, 5000);
+  // Call the function every load
+  window.onload = function() {
+    // Your function call here
+    deleteAllCookiesAndRefresh();
+  };
    </script>
 </head>
 <body>
