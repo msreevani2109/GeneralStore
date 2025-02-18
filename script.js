@@ -16,7 +16,7 @@ function CallVisitorIdentify(){
     var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
     var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
   })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-EINSODADBSWN-2",{
-     // "engagementChecksumFileUrl":"newchecksum.json"
+      "engagementChecksumFileUrl":"newchecksum.json"
   });
 //Gainsight PX Tag - end
 
