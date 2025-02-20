@@ -102,3 +102,7 @@ function handleQuery(){
     aptrinsic('track',"Connect Project selected");
 }
 
+aptrinsic('addListener', 'engagementCompleted', function(eventData)
+{
+  console.log(JSON.stringify(eventData));
+});
