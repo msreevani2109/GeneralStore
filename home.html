@@ -34,13 +34,8 @@
                 aptrinsic('track','referrer',{"referrer_name":"contact"});
             } 
             else {
-                aptrinsic('track','referrer',{"referrer_name":"unknown"});
+                console.log("no need of referrer");
             }
-
-            // // You can also display it on the page if you'd like
-            // const referrerDisplay = document.createElement('p');
-            // referrerDisplay.textContent = `You came from: ${referrer}`;
-            // document.body.appendChild(referrerDisplay);
         }
         
         // Call trackReferrer when the page loads
