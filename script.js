@@ -107,5 +107,6 @@ aptrinsic('addListener', 'engagementCompleted', function(eventData)
   console.log(JSON.stringify(eventData));
   if(eventData.engagementId=="f0f45d57-bb2f-4b2e-8357-f807cabaaccb" && eventData.engagementName== "New demo Guide Engagement" && eventData.interaction=="Completed"){
     aptrinsic('track','demoguide',{"completed":"yes"});
+    aptrinsic('track','demoguide1',{"completednow":"yes"});
   }
 });
