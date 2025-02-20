@@ -29,12 +29,12 @@
 
             // You can perform any logic based on the referrer URL
             if (referrer.includes("about.html")) {
-                aptrinsic('track','referrer',{"referrer_name":about});
+                aptrinsic('track','referrer',{"referrer_name":"about"});
             } else if (referrer.includes("contact.html")) {
-                aptrinsic('track','referrer',{"referrer_name":contact});
+                aptrinsic('track','referrer',{"referrer_name":"contact"});
             } 
             else {
-                aptrinsic('track','referrer',{"referrer_name":unknown});
+                aptrinsic('track','referrer',{"referrer_name":"unknown"});
             }
 
             // // You can also display it on the page if you'd like
