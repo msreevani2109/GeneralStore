@@ -20,7 +20,33 @@
 //     // Your function call here
 //     deleteAllCookiesAndRefresh();
 //   };
-   </script>
+        // Function to track the referrer
+        function trackReferrer() {
+            const referrer = document.referrer;  // Get the referrer URL
+
+            // Display the referrer in the console for debugging
+            console.log("Referrer URL:", referrer);
+
+            // You can perform any logic based on the referrer URL
+            if (referrer.includes("about.html")) {
+                console.log("User navigated from the About page.");
+            } else if (referrer.includes("contact.html")) {
+                console.log("User navigated from the Contact page.");
+            } else if (referrer.includes("form.html")) {
+                console.log("User navigated from the Form page.");
+            } else {
+                console.log("User navigated from an unknown page.");
+            }
+
+            // You can also display it on the page if you'd like
+            const referrerDisplay = document.createElement('p');
+            referrerDisplay.textContent = `You came from: ${referrer}`;
+            document.body.appendChild(referrerDisplay);
+        }
+
+        // Call trackReferrer when the page loads
+        window.onload = trackReferrer;
+    </script>
 </head>
 <body>
     <div class="container">
