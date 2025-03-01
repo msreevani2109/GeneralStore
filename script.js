@@ -131,6 +131,7 @@ function handleChange(){
   var id = localStorage.getItem("id");
   if(selectedCompany!==act){
        //passing user and account objects:
+  aptrinsic("reset");   
   aptrinsic("identify",
     {
     //User Fields
