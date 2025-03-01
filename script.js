@@ -37,6 +37,7 @@ function navigate(form){
   var name = username.split("@")[0];
   var lname = getLastName();
   act = getAccount(accountid);
+  localStorage.setItem("accountName",act);
   //passing user and account objects:
   aptrinsic("identify",
     {
@@ -122,5 +123,5 @@ aptrinsic('addListener', 'engagementView', function(eventData)
 function handleChange(){
   var selectedCompany = document.getElementById("companies").value;
   console.log("Selected company: " + selectedCompany);
-  console.log("act: " + act);
+  console.log(localStorage.getItem("accountName"));
 }
