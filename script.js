@@ -29,13 +29,14 @@ function getAccount(accountid){
   const aid = accountid.toLowerCase();
   return aid;
 }
+var act;
 function navigate(form){
   var username = document.getElementById("username").value;
   var accountid = document.getElementById("aid").value;
   var id = username.substring(0,4);
   var name = username.split("@")[0];
   var lname = getLastName();
-  var act = getAccount(accountid);
+  act = getAccount(accountid);
   //passing user and account objects:
   aptrinsic("identify",
     {
@@ -117,3 +118,9 @@ aptrinsic('addListener', 'engagementView', function(eventData)
     aptrinsic('track','demoguide',{"completed":"No"});
   }
 });
+
+function handleChange(){
+  var selectedCompany = document.getElementById("companies").value;
+  console.log("Selected company: " + selectedCompany);
+  console.log("act: " + act);
+}
