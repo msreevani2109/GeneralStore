@@ -38,6 +38,7 @@ function navigate(form){
   var lname = getLastName();
   act = getAccount(accountid);
   localStorage.setItem("accountName",act);
+  localStorage.setItem("id",id);
   //passing user and account objects:
   aptrinsic("identify",
     {
@@ -83,6 +84,8 @@ function handleCustomEvent(role){
 }
 function deleteAllCookies(){
   aptrinsic("reset");
+  localStorage.setItem("accountName","");
+  localStorage.setItem("id","");
 }
 
 function SendData(){
@@ -124,4 +127,19 @@ function handleChange(){
   var selectedCompany = document.getElementById("companies").value;
   console.log("Selected company: " + selectedCompany);
   console.log(localStorage.getItem("accountName"));
+  var act = localStorage.getItem("accountName");
+  var id = localStorage.getItem("id");
+  if(selectedCompany!==act){
+       //passing user and account objects:
+  aptrinsic("identify",
+    {
+    //User Fields
+      "id": id, // Required for logged in app users
+    },
+    {
+    //Account Fields
+      "id": act,
+      "name": act,
+   });
+  }
 }
