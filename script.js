@@ -107,21 +107,21 @@ function handleQuery(){
     aptrinsic('track',"Connect Project selected");
 }
 
-aptrinsic('addListener', 'engagementCompleted', function(eventData)
-{
-  console.log(JSON.stringify(eventData));
-  if(eventData.engagementId=="f0f45d57-bb2f-4b2e-8357-f807cabaaccb" && eventData.engagementName== "New demo Guide Engagement" && eventData.interaction=="Completed"){
-    aptrinsic('track','demoguide',{"completed":"yes"});
-  }
-});
+// aptrinsic('addListener', 'engagementCompleted', function(eventData)
+// {
+//   console.log(JSON.stringify(eventData));
+//   if(eventData.engagementId=="f0f45d57-bb2f-4b2e-8357-f807cabaaccb" && eventData.engagementName== "New demo Guide Engagement" && eventData.interaction=="Completed"){
+//     aptrinsic('track','demoguide',{"completed":"yes"});
+//   }
+// });
 
-aptrinsic('addListener', 'engagementView', function(eventData)
-{
-  console.log(JSON.stringify(eventData));
-  if(eventData.engagementId=="c9d8e660-e1ad-452e-82b2-d4c1172166f0" && eventData.engagementName== "New  demo Dialog Engagement" && eventData.interaction=="Completed"){
-    aptrinsic('track','demoguide',{"completed":"No"});
-  }
-});
+// aptrinsic('addListener', 'engagementView', function(eventData)
+// {
+//   console.log(JSON.stringify(eventData));
+//   if(eventData.engagementId=="c9d8e660-e1ad-452e-82b2-d4c1172166f0" && eventData.engagementName== "New  demo Dialog Engagement" && eventData.interaction=="Completed"){
+//     aptrinsic('track','demoguide',{"completed":"No"});
+//   }
+// });
 
 function handleChange(){
   var selectedCompany = document.getElementById("companies").value;
