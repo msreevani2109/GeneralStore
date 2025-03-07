@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll vs Fixed Element</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 2000px; /* To make the page long enough to scroll */
+            margin: 0;
+        }
+        
+        /* Fixed element */
+        .fixed-element {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        /* Scrollable element */
+        .scrollable-element {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: #00ccff;
+            height: 150px;
+            overflow: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed element that stays in place -->
+    <div class="fixed-element">
+        I stay fixed when you scroll!
+    </div>
+
+    <!-- Scrollable element -->
+    <div class="scrollable-element">
+        This is a scrollable element.<br>
+        You can scroll inside this box.<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec eros at libero laoreet tincidunt. Nulla facilisi. Proin auctor arcu at orci aliquet, non consequat enim dignissim. Nam ut feugiat augue. Curabitur convallis orci et sollicitudin fermentum. Nunc pharetra dui eu felis tempor, a scelerisque purus egestas. Integer vitae laoreet urna. Suspendisse potenti. Cras id mollis felis, ac varius tortor. Etiam volutpat arcu non magna volutpat, sit amet bibendum urna feugiat.
+    </div>
+
+</body>
+</html>
