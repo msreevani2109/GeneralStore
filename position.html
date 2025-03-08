@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
     <title>Scroll vs Fixed Element</title>
     <style>
         body {
@@ -33,7 +35,20 @@
     </style>
 </head>
 <body>
-
+    <div class= "navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="https://msreevani2109.github.io/GeneralStore/about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="ticket.html">Ticket</a></li>
+            <li><a href="table.html">Table</a></li>
+            <li><a href="summary.html">Summary</a></li>
+            <li><a href="position.html">position</a></li>
+            <li><a id="logout" href="login.html" onclick="deleteAllCookies()">Logout</a></li>
+        </ul>
+    </div>
     <!-- Fixed element that stays in place -->
     <div class="fixed-element">
         I stay fixed when you scroll!
