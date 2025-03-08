@@ -1,15 +1,15 @@
-//To identify anonymous users who just visited signup page
-function CallVisitorIdentify(){
-    aptrinsic("identify",
-            {
-                //User Fields
-                "id": "visitor", // Required for logged in app users
-            },
-            {
-                //Account Fields
-                "id": "Visitors"
-            });
- }
+// //To identify anonymous users who just visited signup page
+// function CallVisitorIdentify(){
+//     aptrinsic("identify",
+//             {
+//                 //User Fields
+//                 "id": "visitor", // Required for logged in app users
+//             },
+//             {
+//                 //Account Fields
+//                 "id": "Visitors"
+//             });
+//  }
 //Gainsight PX Tag - start
   (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
       (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
