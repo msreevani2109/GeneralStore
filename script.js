@@ -147,7 +147,7 @@ function handleChange(){
             "name": sc,
          });
 
-      },2000)
+      },10000)
  
   }
 }
