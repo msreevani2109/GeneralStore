@@ -1,4 +1,4 @@
-// //To identify anonymous users who just visited signup page
+//To identify anonymous users who just visited signup page
 // function CallVisitorIdentify(){
 //     aptrinsic("identify",
 //             {
@@ -131,19 +131,23 @@ function handleChange(){
   var id = localStorage.getItem("id");
   if(selectedCompany!==act){
        //passing user and account objects:
-       aptrinsic("reset");  
+       aptrinsic("reset"); 
       localStorage.setItem("accountName",selectedCompany);
       var sc= localStorage.getItem("accountName");
-  aptrinsic("identify",
-    {
-    //User Fieldsq
-    
-      "id": id, // Required for logged in app users
-    },
-    {
-    //Account Fields
-      "id": sc,
-      "name": sc,
-   });
+      setTimeout(()=>{
+        aptrinsic("identify",
+          {
+          //User Fieldsq
+          
+            "id": id, // Required for logged in app users
+          },
+          {
+          //Account Fields
+            "id": sc,
+            "name": sc,
+         });
+
+      },2000)
+ 
   }
 }
