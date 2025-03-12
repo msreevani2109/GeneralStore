@@ -148,7 +148,7 @@ function handleChange(){
             "name": sc,
          });
 
-      },10000)
+      },20000)
  
   }
 }
