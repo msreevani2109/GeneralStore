@@ -124,31 +124,31 @@ function handleQuery(){
 //   }
 // });
 
-function handleChange(){
-  var selectedCompany = document.getElementById("companies").value;
-  console.log("Selected company: " + selectedCompany);
-  console.log(localStorage.getItem("accountName"));
-  var act = localStorage.getItem("accountName");
-  var id = localStorage.getItem("id");
-  if(selectedCompany!==act){
-       //passing user and account objects:
-       aptrinsic("reset"); 
-      localStorage.setItem("accountName",selectedCompany);
-      var sc= localStorage.getItem("accountName");
-      setTimeout(()=>{
-        aptrinsic("identify",
-          {
-          //User Fieldsq
+// function handleChange(){
+//   var selectedCompany = document.getElementById("companies").value;
+//   console.log("Selected company: " + selectedCompany);
+//   console.log(localStorage.getItem("accountName"));
+//   var act = localStorage.getItem("accountName");
+//   var id = localStorage.getItem("id");
+//   if(selectedCompany!==act){
+//        //passing user and account objects:
+//        aptrinsic("reset"); 
+//       localStorage.setItem("accountName",selectedCompany);
+//       var sc= localStorage.getItem("accountName");
+//       setTimeout(()=>{
+//         aptrinsic("identify",
+//           {
+//           //User Fieldsq
           
-            "id": id, // Required for logged in app users
-          },
-          {
-          //Account Fields
-            "id": sc,
-            "name": sc,
-         });
+//             "id": id, // Required for logged in app users
+//           },
+//           {
+//           //Account Fields
+//             "id": sc,
+//             "name": sc,
+//          });
 
-      },20000)
+//       },20000)
  
-  }
-}
+//   }
+// }
