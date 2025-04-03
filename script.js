@@ -28,7 +28,7 @@
   window,
   document,
   "https://web-sdk.aptrinsic.com/api/aptrinsic.js",
-  "AP-EINSODADBSWN-2",
+  "AP-VMEVYG8PSBR8-2",
   {
     //"engagementChecksumFileUrl":"newchecksum.json",
     //badgesUseFixedPosition: true
