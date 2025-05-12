@@ -32,7 +32,6 @@
   {
     //"engagementChecksumFileUrl":"newchecksum.json",
     //badgesUseFixedPosition: true
-    localStorageCookie: true,
   }
 );
 //Gainsight PX Tag - end
@@ -42,20 +41,20 @@ function getLastName() {
   const randomIndex = Math.floor(Math.random() * alphabet.length);
   return alphabet[randomIndex];
 }
-function getAccount(accountid) {
-  const aid = accountid.toLowerCase();
-  return aid;
-}
-var act;
+// function getAccount(accountid) {
+//   const aid = accountid.toLowerCase();
+//   return aid;
+// }
+//var act;
 function navigate(form) {
   var username = document.getElementById("username").value;
   var accountid = document.getElementById("aid").value;
-  var id = username.substring(0, 4);
+  var id = username.substring(0, 6);
   var name = username.split("@")[0];
   var lname = getLastName();
-  act = getAccount(accountid);
-  localStorage.setItem("accountName", act);
-  localStorage.setItem("id", id);
+  //act = getAccount(accountid);
+  //localStorage.setItem("accountName", act);
+  //localStorage.setItem("id", id);
   //passing user and account objects:
   aptrinsic(
     "identify",
@@ -72,8 +71,8 @@ function navigate(form) {
     },
     {
       //Account Fields
-      id: act, //Required
-      name: act,
+      id: accountid, //Required
+      name: accountid,
       MSVID1: "",
     }
   );
