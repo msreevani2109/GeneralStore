@@ -61,6 +61,8 @@ function navigate(form) {
     {
       //User Fields
       id: id, // Required for logged in app users
+      userHash:
+        "65658c274bc987b336fe3422354366125f99b06e94f5b0e390951af01c808181",
       email: username,
       firstName: name,
       lastName: lname,
