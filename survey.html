@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <style>
-        .custom-checkbox{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            top:50px;
-        }
+      .custom-checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 50px;
+      }
     </style>
     <script src="script.js"></script>
-</head>
-<body>
-    <div class= "navbar">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">survey</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="form.html">Form</a></li>
-            <li><a id="logout" href="login.html" onclick="deleteAllCookies()">Logout</a></li>
-        </ul>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">survey</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li>
+          <a id="logout" href="login.html" onclick="deleteAllCookies()"
+            >Logout</a
+          >
+        </li>
+      </ul>
     </div>
     <div class="custom-checkbox">
-        <input type="checkbox" style="display: block;margin-right:4px;" data-label="heathcare">
-         <label>
-           <strong>heathcare</strong> 
-          </label>  
+      <input
+        type="checkbox"
+        style="display: block; margin-right: 4px"
+        data-label="heathcare" />
+      <label>
+        <strong>heathcare</strong>
+      </label>
     </div>
-   <div class="custom-checkbox">
-    <input type="checkbox" style="display: none;margin-right: 4px;" data-label="hightech">
-     <label>
+    <div class="custom-checkbox">
+      <input
+        type="checkbox"
+        style="display: none; margin-right: 4px"
+        data-label="hightech" />
+      <label>
         <strong>hightech</strong>
-    </label>
-   </div>
-</body>
+      </label>
+    </div>
+    <form>
+      <label for="name">Name:</label><br />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name" /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        cols="50"
+        placeholder="Enter your message"></textarea
+      ><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
 </html>
