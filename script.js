@@ -33,6 +33,7 @@
     //"engagementChecksumFileUrl":"newchecksum.json",
     //badgesUseFixedPosition: true
     htmlSanitization: true,
+    htmlSanitizationAllowedDomains: ["//player.vimeo.com/video/1074485388"],
   }
 );
 //Gainsight PX Tag - end
