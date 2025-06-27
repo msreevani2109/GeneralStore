@@ -32,6 +32,7 @@
   {
     //"engagementChecksumFileUrl":"newchecksum.json",
     //badgesUseFixedPosition: true
+    htmlSanitization: true,
   }
 );
 //Gainsight PX Tag - end
