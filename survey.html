@@ -12,6 +12,23 @@
         align-items: center;
         position: relative;
         top: 50px;
+        margin-bottom: 10px;
+      }
+
+      .checkbox-input {
+        margin-right: 4px;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .form-input {
+        padding: 5px;
+        margin: 10px;
       }
     </style>
     <script src="script.js"></script>
@@ -21,7 +38,7 @@
       <ul>
         <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">survey</a></li>
+        <li><a href="#">Survey</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="form.html">Form</a></li>
         <li>
@@ -31,30 +48,35 @@
         </li>
       </ul>
     </div>
+
+    <!-- Healthcare Checkbox -->
     <div class="custom-checkbox">
       <input
         type="checkbox"
-        style="display: block; margin-right: 4px"
-        data-label="heathcare" />
-      <label>
-        <strong>heathcare</strong>
-      </label>
+        id="healthcare"
+        class="checkbox-input"
+        data-label="healthcare" />
+      <label for="healthcare"><strong>Healthcare</strong></label>
     </div>
+
+    <!-- Hightech Checkbox (Hidden Accessibly) -->
     <div class="custom-checkbox">
       <input
         type="checkbox"
-        style="display: none; margin-right: 4px"
+        id="hightech"
+        class="checkbox-input visually-hidden"
         data-label="hightech" />
-      <label>
-        <strong>hightech</strong>
-      </label>
+      <label for="hightech"><strong>Hightech</strong></label>
     </div>
-    <form>
+
+    <!-- Form -->
+    <form action="#" method="POST">
       <label for="name">Name:</label><br />
       <input
         type="text"
         id="name"
         name="name"
+        class="form-input"
         placeholder="Enter your name" /><br /><br />
 
       <label for="message">Message:</label><br />

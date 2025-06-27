@@ -56,7 +56,7 @@ function navigate(form) {
   //localStorage.setItem("accountName", act);
   //localStorage.setItem("id", id);
   //passing user and account objects:
-  aptrinsic(
+  window.aptrinsic(
     "identify",
     {
       //User Fields
