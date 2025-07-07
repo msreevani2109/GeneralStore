@@ -1,90 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
-<body>
-    <div class= "navbar">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="form.html">Form</a></li>
-            <li><a id="logout" href="login.html" onclick="deleteAllCookies()">Logout</a></li>
-        </ul>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li>
+          <a id="logout" href="login.html" onclick="deleteAllCookies()"
+            >Logout</a
+          >
+        </li>
+      </ul>
     </div>
     <h3>
-        SreeRamaPrasad General Store started serving the needs since 1996.
-        We offer a wide range of fresh groceries.
+      SreeRamaPrasad General Store started serving the needs since 1996. We
+      offer a wide range of fresh groceries.
     </h3>
-    
+
     <button class="test-btn" onclick="handleButtonClick()">AboutTest</button>
     <button id="btn-yes" onclick="handleYes()">Yes</button>
     <button id="btn-No" onclick="handleNo()">No</button>
     <button id="btn-both" onclick="handleBoth()">both</button>
-    <button data-role="admin" id="adm" onclick="handleCustomEvent('admin')">Admin</button>
-    <button data-role="manager" id= "mgr" onclick="handleCustomEvent('manager')">Manager</button>
-    <h2> 
-      <span data-gainsight="dnb-country-region-risk">D & B Country Region Risk</span>
+    <button data-role="admin" id="adm" onclick="handleCustomEvent('admin')">
+      Admin
+    </button>
+    <button data-role="manager" id="mgr" onclick="handleCustomEvent('manager')">
+      Manager
+    </button>
+    <h2>
+      <span data-gainsight="dnb-country-region-risk"
+        >D & B Country Region Risk</span
+      >
       <span data-gainsight="SalesAccelerationTrial-CountryRisk"></span>
     </h2>
     <div class="parent">
-          Parent
-        <div class="child">
-            Child
-        </div>
-        <button>Test inside parent</button>
+      Parent
+      <div class="child">Child</div>
+      <button>Test inside parent</button>
     </div>
 
-     <div style="border:2px solid black;display: flex; gap:20px;padding:20px;margin-top:10px;margin-left: 2px;">
-            <div>
-                <button id="agree">Agree</button>
-            </div>
-            <div>
-                <button id="disagree">Disagree</button>
-            </div>
-            <div>
-                <button id="neutral">Neutral</button>
-            </div> 
-            <div>
-                <button id="decided">Decided</button>
-            </div> 
-         <div>
-                <button id="query" onclick="handleQuery()">Query</button>
-         </div>
+    <div
+      style="
+        border: 2px solid black;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 2px;
+      ">
+      <div>
+        <button id="agree">Agree</button>
+      </div>
+      <div>
+        <button id="disagree">Disagree</button>
+      </div>
+      <div>
+        <button id="neutral">Neutral</button>
+      </div>
+      <div>
+        <button id="decided">Decided</button>
+      </div>
+      <div>
+        <button id="query" onclick="handleQuery()">Query</button>
+      </div>
     </div>
-    <div style="border:2px solid black;padding:20px;margin-top:10px;margin-left: 2px;" >
-        <h2>Interest Value Storage</h2>
-        <div style="margin-bottom:15px">
-            <label for="amount">Required Amount:</label>
-            <input type="number" id="amount" placeholder="Enter amount">
-        </div>
-        <div style="margin-bottom:15px">
-            <label for="interest">Interest Value:</label>
-            <input type="number" id="interest" placeholder="Enter interest value">
-        </div>
-        <button id="btn-send" onclick="storeValues()">Store Values</button>
+    <div
+      style="
+        border: 2px solid black;
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 2px;
+      ">
+      <h2>Interest Value Storage</h2>
+      <div style="margin-bottom: 15px">
+        <label for="amount">Required Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" />
+      </div>
+      <div style="margin-bottom: 15px">
+        <label for="interest">Interest Value:</label>
+        <input type="number" id="interest" placeholder="Enter interest value" />
+      </div>
+      <button id="btn-send" onclick="storeValues()">Store Values</button>
     </div>
-    <div style="border:2px solid black;padding:20px;margin-top:10px;margin-left: 2px;">
-        <button id="employeeButton" onclick="setGlobalContext('employee')">Employee GlobalContext</button>
-        <button id="employerButton" onclick="setGlobalContext('employer')">Employer GlobalContext</button>
+    <div
+      style="
+        border: 2px solid black;
+        padding: 20px;
+        margin-top: 10px;
+        margin-left: 2px;
+      ">
+      <button id="employeeButton" onclick="setGlobalContext('employee')">
+        Employee GlobalContext
+      </button>
+      <button id="employerButton" onclick="setGlobalContext('employer')">
+        Employer GlobalContext
+      </button>
     </div>
-    <h2> 
-        <span data-gainsight="dnb-country-region-risk1">D & B Country Region Risk Button</span>
-        <span data-gainsight="SalesAccelerationTrial-CountryRisk1"></span>
-        <button>span sibling button</button>
-      </h2>
-      <button id="check">Check</button>
-      <select name="companies" id="companies">
-        <option value="google">Google</option>
-        <option value="infosys">Infosys</option>
-        <option value="gainsight">Gainsight</option>
-        <option value="tcs">TCS</option>
-        <option value="microsoft">Microsoft</option>
-      </select>
-</body>
+    <h2>
+      <span data-gainsight="dnb-country-region-risk1"
+        >D & B Country Region Risk Button</span
+      >
+      <span data-gainsight="SalesAccelerationTrial-CountryRisk1"></span>
+      <button>span sibling button</button>
+    </h2>
+    <button id="check">Check</button>
+    <select name="companies" id="companies">
+      <option value="google">Google</option>
+      <option value="infosys">Infosys</option>
+      <option value="gainsight">Gainsight</option>
+      <option value="tcs">TCS</option>
+      <option value="microsoft">Microsoft</option>
+    </select>
+    <div class="GenericToolbarIcon" title="Delete activity" id="ui-id-19">
+      <svg viewbox="0 0 200 200" width="40" height="40">
+        <image
+          height="40"
+          width="40"
+          xlink:href="JEMA GER 1635-05 copy.jpg"></image>
+      </svg>
+    </div>
+  </body>
 </html>
