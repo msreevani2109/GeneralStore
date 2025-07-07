@@ -1,85 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer-when-downgrade">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
     <title>Home</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-   <script>
-//     function deleteAllCookiesAndRefresh() {
-//     // Delete all cookies using Aptrinsic
-//      aptrinsic("reset");
-//      console.log("Cookies have been reset by Aptrinsic.");
-//      // Perform a hard refresh
-    
-//    }
-//   // Call the function every load
-//   window.onload = function() {
-//     // Your function call here
-//     deleteAllCookiesAndRefresh();
-//   };
-        // Function to track the referrer
-        function trackReferrer() {
-            const referrer = document.referrer;  // Get the referrer URL
+    <script>
+      //     function deleteAllCookiesAndRefresh() {
+      //     // Delete all cookies using Aptrinsic
+      //      aptrinsic("reset");
+      //      console.log("Cookies have been reset by Aptrinsic.");
+      //      // Perform a hard refresh
 
-            // Display the referrer in the console for debugging
-            console.log("Referrer URL:", referrer);
+      //    }
+      //   // Call the function every load
+      //   window.onload = function() {
+      //     // Your function call here
+      //     deleteAllCookiesAndRefresh();
+      //   };
+      // Function to track the referrer
+      function trackReferrer() {
+        const referrer = document.referrer; // Get the referrer URL
 
-            // You can perform any logic based on the referrer URL
-            if (referrer.includes("about.html")) {
-                aptrinsic('track','referrer',{"referrer_name":"about"});
-            } else if (referrer.includes("contact.html")) {
-                aptrinsic('track','referrer',{"referrer_name":"contact"});
-            } 
-            else {
-                console.log("no need of referrer");
-            }
+        // Display the referrer in the console for debugging
+        console.log("Referrer URL:", referrer);
+
+        // You can perform any logic based on the referrer URL
+        if (referrer.includes("about.html")) {
+          aptrinsic("track", "referrer", { referrer_name: "about" });
+        } else if (referrer.includes("contact.html")) {
+          aptrinsic("track", "referrer", { referrer_name: "contact" });
+        } else {
+          console.log("no need of referrer");
         }
-        
-        // Call trackReferrer when the page loads
-        window.onload = trackReferrer;
-    </script>
-</head>
-<body>
-    <div class="container">
-        <h1>SREE RAMA PRASAD General Store <sub><small>Your One-Stop Shop for Everyday needs</small></sub></h1>
-        <div class= "navbar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="https://msreevani2109.github.io/GeneralStore/about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="form.html">Form</a></li>
-                <li><a href="survey.html">Survey</a></li>
-                <li><a href="ticket.html">Ticket</a></li>
-                <li><a href="table.html">Table</a></li>
-                <li><a href="summary.html">Summary</a></li>
-                <li><a href="position.html">position</a></li>
-                <li><a id="logout" href="login.html" onclick="deleteAllCookies()">Logout</a></li>
-            </ul>
-        </div>
-        <div class="content">
-            <h3>Welcome to SreeRamaPrasad General Store!</h3>
+      }
 
-            <select id="check" value="--- Groceries in Store ---">
-              <option>Rice</option>
-              <option>Dal</option>
-              <option>Groundnuts</option>
-              <option>Oil</option>
-              <option>Sugar</option>
-              <option>Jaggery</option>
-              <option>Salt</option>
-            </select>
-        </div>
-        <button class="test-btn">HomeTest</button>
-        <button id="learn">Learn</button>
-        <button id="learn+test">LearnTest</button>
+      // Call trackReferrer when the page loads
+      window.onload = trackReferrer;
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        SREE RAMA PRASAD General Store
+        <sub><small>Your One-Stop Shop for Everyday needs</small></sub>
+      </h1>
+      <div class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="https://msreevani2109.github.io/GeneralStore/about.html"
+              >About</a
+            >
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="form.html">Form</a></li>
+          <li><a href="survey.html">Survey</a></li>
+          <li><a href="ticket.html">Ticket</a></li>
+          <li><a href="table.html">Table</a></li>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="position.html">position</a></li>
+          <li>
+            <a id="logout" href="login.html" onclick="deleteAllCookies()"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h3>Welcome to SreeRamaPrasad General Store!</h3>
+
+        <select id="check" value="--- Groceries in Store ---">
+          <option>Rice</option>
+          <option>Dal</option>
+          <option>Groundnuts</option>
+          <option>Oil</option>
+          <option>Sugar</option>
+          <option>Jaggery</option>
+          <option>Salt</option>
+        </select>
+      </div>
+      <button class="test-btn">HomeTest</button>
+      <button id="learn">Learn</button>
+      <button id="learn+test">LearnTest</button>
     </div>
-    
+
     <div id="btn-container">
-        <button id="gs-help" style="position:absolute;top:250px;margin-bottom:10px;padding:2px;border-radius:3px">Help</button>
+      <button
+        id="gs-help"
+        title="help"
+        style="
+          position: absolute;
+          top: 250px;
+          margin-bottom: 10px;
+          padding: 2px;
+          border-radius: 3px;
+        ">
+        Help
+      </button>
     </div>
-    <iframe src="https://msreevani2109.github.io/pxdemofinal/login.html" style="position:absolute;height:600px;width:800px;top:300px"></iframe> 
-</body>
+    <iframe
+      src="https://msreevani2109.github.io/pxdemofinal/login.html"
+      style="
+        position: absolute;
+        height: 600px;
+        width: 800px;
+        top: 300px;
+      "></iframe>
+  </body>
 </html>
