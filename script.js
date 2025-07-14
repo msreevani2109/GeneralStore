@@ -51,7 +51,7 @@ function getLastName() {
 function navigate(form) {
   var username = document.getElementById("username").value;
   var accountid = document.getElementById("aid").value;
-  //var id = username.substring(0, 6);
+  var id = username.substring(0, 6);
   var name = username.split("@")[0];
   var lname = getLastName();
   //act = getAccount(accountid);
@@ -62,7 +62,7 @@ function navigate(form) {
     "identify",
     {
       //User Fields
-      //id: id, // Required for logged in app users
+      id: id, // Required for logged in app users
       //userHash:
       //"612b8b9b7f2b2090003c7c68d4dd3b2528b0eaa8cc218ecba9a0c5352de56f94",
       email: username,
