@@ -80,8 +80,22 @@ function navigate(form) {
       MSVID1: "",
     }
   );
-  alert("logged in succesfully");
+  globalcontext(accountid);
+  //alert("logged in succesfully");
   form.action = "home.html";
+}
+function globalcontext(accountid) {
+  if (accountid == "google") {
+    aptrinsic("set", "globalContext", {
+      company: "google",
+      plan: "Google Cloud",
+    });
+  } else {
+    aptrinsic("set", "globalContext", {
+      company: accountid,
+      plan: "AWS",
+    });
+  }
 }
 function handleYes() {
   aptrinsic("track", "track-yes", { respose: "yes" });
