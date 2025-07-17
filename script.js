@@ -80,24 +80,42 @@ function navigate(form) {
       MSVID1: "",
     }
   );
-  setTimeout(() => {
-    globalcontext(accountid);
-  }, 1000);
+  // Now wait for PX to fully initialize before setting globalContext
+  waitForPXReadyAndSetGlobalContext(accountid);
   //alert("logged in succesfully");
   form.action = "home.html";
 }
-function globalcontext(accountid) {
-  if (accountid == "google") {
-    aptrinsic("set", "globalContext", {
-      company: "google",
-      plan: "Google Cloud",
-    });
-  } else {
-    aptrinsic("set", "globalContext", {
-      company: accountid,
-      plan: "AWS",
-    });
-  }
+// Wait until PX is ready and identify has been processed
+function waitForPXReadyAndSetGlobalContext(accountid) {
+  let attempts = 0;
+  const maxAttempts = 10;
+  const interval = setInterval(() => {
+    const pxReady =
+      typeof window.aptrinsic === "function" &&
+      window.aptrinsic.q && // queue is defined
+      window.aptrinsic.q.length === 0; // queue is empty (calls flushed)
+
+    if (pxReady || attempts >= maxAttempts) {
+      clearInterval(interval);
+
+      if (typeof window.aptrinsic === "function") {
+        if (accountid === "google") {
+          aptrinsic("set", "globalContext", {
+            company: "google",
+            plan: "Google Cloud",
+          });
+        } else {
+          aptrinsic("set", "globalContext", {
+            company: accountid,
+            plan: "AWS",
+          });
+        }
+      } else {
+        console.warn("Aptrinsic still not ready after multiple attempts");
+      }
+    }
+    attempts++;
+  }, 300); // check every 300ms
 }
 function handleYes() {
   aptrinsic("track", "track-yes", { respose: "yes" });
