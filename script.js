@@ -82,7 +82,7 @@ function navigate(form) {
   );
   setTimeout(() => {
     globalcontext(accountid);
-  }, 300);
+  }, 1000);
   //alert("logged in succesfully");
   form.action = "home.html";
 }
