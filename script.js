@@ -80,7 +80,9 @@ function navigate(form) {
       MSVID1: "",
     }
   );
-  globalcontext(accountid);
+  setTimeout(() => {
+    globalcontext(accountid);
+  }, 300);
   //alert("logged in succesfully");
   form.action = "home.html";
 }
