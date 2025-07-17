@@ -80,42 +80,18 @@ function navigate(form) {
       MSVID1: "",
     }
   );
-  // Now wait for PX to fully initialize before setting globalContext
-  waitForPXReadyAndSetGlobalContext(accountid);
+  globalcontext();
   //alert("logged in succesfully");
   form.action = "home.html";
 }
-// Wait until PX is ready and identify has been processed
-function waitForPXReadyAndSetGlobalContext(accountid) {
-  let attempts = 0;
-  const maxAttempts = 10;
-  const interval = setInterval(() => {
-    const pxReady =
-      typeof window.aptrinsic === "function" &&
-      window.aptrinsic.q && // queue is defined
-      window.aptrinsic.q.length === 0; // queue is empty (calls flushed)
-
-    if (pxReady || attempts >= maxAttempts) {
-      clearInterval(interval);
-
-      if (typeof window.aptrinsic === "function") {
-        if (accountid === "google") {
-          aptrinsic("set", "globalContext", {
-            company: "google",
-            plan: "Google Cloud",
-          });
-        } else {
-          aptrinsic("set", "globalContext", {
-            company: accountid,
-            plan: "AWS",
-          });
-        }
-      } else {
-        console.warn("Aptrinsic still not ready after multiple attempts");
-      }
-    }
-    attempts++;
-  }, 300); // check every 300ms
+function globalcontext() {
+  if (document.getElementById("username").value == "omkar@google.com") {
+    aptrinsic("set", "globalContext", {
+      version: 12345,
+      plan: "Salesforce",
+      type: "Iframe",
+    });
+  }
 }
 function handleYes() {
   aptrinsic("track", "track-yes", { respose: "yes" });
