@@ -28,9 +28,10 @@
   window,
   document,
   "https://web-sdk.aptrinsic.com/api/aptrinsic.js",
-  "AP-VMEVYG8PSBR8-2",
+  "AP-VMEVYG8PSBR8-2-2",
   {
-    //"engagementChecksumFileUrl":"newchecksum.json",
+    engagementChecksumFileUrl:
+      "./Engagement_checksum_sreevani webapp_Stage.json",
     //badgesUseFixedPosition: true
     //htmlSanitization: true,
     //htmlSanitizationAllowedDomains: ["//player.vimeo.com/video/1074485388"],
