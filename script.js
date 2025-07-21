@@ -28,7 +28,7 @@
   window,
   document,
   "https://web-sdk.aptrinsic.com/api/aptrinsic.js",
-  "AP-VMEVYG8PSBR8-2-2",
+  "AP-VMEVYG8PSBR8-2",
   {
     engagementChecksumFileUrl:
       "Engagement_checksum_sreevani webapp_Production (18).json",
