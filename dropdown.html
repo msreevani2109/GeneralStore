@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Container UI</title>
+    <script src="script.js"></script>
+    <style>
+      .create-container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+      }
+
+      .btn:disabled {
+        background-color: #e0e0e0;
+        cursor: not-allowed;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+
+      .btn-group {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .dropdown-toggle::after {
+        content: " ▼";
+        font-size: 10px;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        min-width: 180px;
+        z-index: 1000;
+      }
+
+      .dropdown-menu.show {
+        display: block;
+      }
+
+      .dropdown-menu-item {
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        color: black;
+      }
+
+      .dropdown-menu-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      .item-icon {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="create-container">
+      <button id="uploadBtn" class="browse btn btn-default">UPLOAD</button>
+
+      <div class="btn-group">
+        <button id="createMain" class="btn main-btn btn-primary">
+          <i class="btn-icon">+</i> CREATE
+        </button>
+        <button
+          id="dropdownToggle"
+          class="btn dropdown-toggle btn-primary"></button>
+        <ul id="dropdownMenu" class="dropdown-menu">
+          <li>
+            <a href="#" class="dropdown-menu-item"
+              ><i class="item-icon">📄</i> Card from template</a
+            >
+          </li>
+          <li>
+            <a href="#" class="dropdown-menu-item"
+              ><i class="item-icon">📁</i> Folder</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const dropdownToggle = document.getElementById("dropdownToggle");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const createMain = document.getElementById("createMain");
+      const uploadBtn = document.getElementById("uploadBtn");
+
+      // Toggle dropdown visibility
+      dropdownToggle.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Simulate "Create" main action
+      createMain.addEventListener("click", () => {
+        alert("Main CREATE action clicked (e.g. Create Card)");
+      });
+
+      // Simulate "Upload" action
+      uploadBtn.addEventListener("click", () => {
+        alert("Upload button clicked");
+      });
+
+      // Handle dropdown actions
+      dropdownMenu.querySelectorAll(".dropdown-menu-item").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          alert(`Selected: ${item.textContent.trim()}`);
+          dropdownMenu.classList.remove("show");
+        });
+      });
+
+      // Close dropdown on outside click
+      window.addEventListener("click", (e) => {
+        if (!e.target.closest(".btn-group")) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
