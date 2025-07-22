@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <title>Create Container UI</title>
     <script src="script.js"></script>
     <style>
@@ -75,6 +76,20 @@
     </style>
   </head>
   <body>
+    <div class="navbar">
+      <ul>
+        <li><a id="btn-home" href="home.html">Home</a></li>
+        <li><a id="btn-about" href="about.html">About</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li><a href="#">Dropdown</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li>
+          <a id="logout" href="login.html" onclick="deleteAllCookies()"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
     <div class="create-container">
       <button id="uploadBtn" class="browse btn btn-default">UPLOAD</button>
 
@@ -87,12 +102,12 @@
           class="btn dropdown-toggle btn-primary"></button>
         <ul id="dropdownMenu" class="dropdown-menu">
           <li>
-            <a href="#" class="dropdown-menu-item"
+            <a href="./home.html" class="dropdown-menu-item"
               ><i class="item-icon">📄</i> Card from template</a
             >
           </li>
           <li>
-            <a href="#" class="dropdown-menu-item"
+            <a href="./about.html" class="dropdown-menu-item"
               ><i class="item-icon">📁</i> Folder</a
             >
           </li>
@@ -121,14 +136,14 @@
         alert("Upload button clicked");
       });
 
-      // Handle dropdown actions
-      dropdownMenu.querySelectorAll(".dropdown-menu-item").forEach((item) => {
-        item.addEventListener("click", (e) => {
-          e.preventDefault();
-          alert(`Selected: ${item.textContent.trim()}`);
-          dropdownMenu.classList.remove("show");
-        });
-      });
+      //   // Handle dropdown actions
+      //   dropdownMenu.querySelectorAll(".dropdown-menu-item").forEach((item) => {
+      //     item.addEventListener("click", (e) => {
+      //       e.preventDefault();
+      //       alert(`Selected: ${item.textContent.trim()}`);
+      //       dropdownMenu.classList.remove("show");
+      //     });
+      //   });
 
       // Close dropdown on outside click
       window.addEventListener("click", (e) => {
