@@ -100,7 +100,7 @@
         <button
           id="dropdownToggle"
           class="btn dropdown-toggle btn-primary"></button>
-        <ul id="dropdownMenu" class="dropdown-menu">
+        <ul id="dropdownMenu" class="dropdown-menu" tabindex="-1">
           <li>
             <a href="./home.html" class="dropdown-menu-item"
               ><i class="item-icon">📄</i> Card from template</a
@@ -114,18 +114,35 @@
         </ul>
       </div>
     </div>
-
     <script>
       const dropdownToggle = document.getElementById("dropdownToggle");
       const dropdownMenu = document.getElementById("dropdownMenu");
       const createMain = document.getElementById("createMain");
       const uploadBtn = document.getElementById("uploadBtn");
+      const btnGroup = dropdownToggle.closest(".btn-group");
 
-      // Toggle dropdown visibility
+      // Toggle dropdown visibility and apply Bootstrap-like behavior
       dropdownToggle.addEventListener("click", () => {
-        const isOpen = dropdownMenu.classList.toggle("show");
-        if (isOpen) {
-          dropdownMenu.focus();
+        const isOpen = dropdownMenu.classList.contains("show");
+
+        // Simulate Bootstrap event & accessibility behavior
+        if (!dropdownToggle.disabled) {
+          if (!isOpen) {
+            const showEvent = new Event("show.bs.dropdown", {
+              bubbles: true,
+              cancelable: true,
+            });
+            dropdownToggle.dispatchEvent(showEvent);
+
+            if (!showEvent.defaultPrevented) {
+              dropdownToggle.focus(); // Focus toggle button
+              dropdownToggle.setAttribute("aria-expanded", "true");
+              dropdownMenu.classList.add("show");
+            }
+          } else {
+            dropdownMenu.classList.remove("show");
+            dropdownToggle.setAttribute("aria-expanded", "false");
+          }
         }
       });
 
@@ -139,19 +156,21 @@
         alert("Upload button clicked");
       });
 
-      //   // Handle dropdown actions
-      //   dropdownMenu.querySelectorAll(".dropdown-menu-item").forEach((item) => {
-      //     item.addEventListener("click", (e) => {
-      //       e.preventDefault();
-      //       alert(`Selected: ${item.textContent.trim()}`);
-      //       dropdownMenu.classList.remove("show");
-      //     });
-      //   });
+      // Optional: Handle dropdown item clicks
+      dropdownMenu.querySelectorAll(".dropdown-menu-item").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          alert(`Selected: ${item.textContent.trim()}`);
+          dropdownMenu.classList.remove("show");
+          dropdownToggle.setAttribute("aria-expanded", "false");
+        });
+      });
 
       // Close dropdown on outside click
       window.addEventListener("click", (e) => {
         if (!e.target.closest(".btn-group")) {
           dropdownMenu.classList.remove("show");
+          dropdownToggle.setAttribute("aria-expanded", "false");
         }
       });
     </script>
