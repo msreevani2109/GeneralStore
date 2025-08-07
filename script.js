@@ -54,6 +54,9 @@ function navigate(form) {
   var id = username.substring(0, 6);
   var name = username.split("@")[0];
   var lname = getLastName();
+  // Generate random age between 18 and 65
+  const randomAge = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+
   //act = getAccount(accountid);
   //localStorage.setItem("accountName", act);
   //localStorage.setItem("id", id);
@@ -71,7 +74,7 @@ function navigate(form) {
       Aadharnumber: 139792,
       PANnumber: 13793,
       gender: "Female",
-      Age: 18,
+      Age: randomAge,
     },
     {
       //Account Fields
