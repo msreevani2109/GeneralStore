@@ -74,7 +74,7 @@ function navigate(form) {
       Aadharnumber: 139792,
       PANnumber: 13793,
       gender: "Female",
-      Age: randomAge,
+      age: randomAge,
     },
     {
       //Account Fields
