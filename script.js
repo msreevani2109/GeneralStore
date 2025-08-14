@@ -147,6 +147,18 @@ function handleQuery() {
   aptrinsic("track", "Connect Project selected");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const fullUrl = window.location.href;
+  const currentPageType = fullUrl.includes("contact.html")
+    ? "contact"
+    : "other";
+
+  if (typeof aptrinsic === "function") {
+    aptrinsic("set", "user", { pageType: currentPageType });
+    console.log("Aptrinsic user attribute set with pageType:", currentPageType);
+  }
+});
+
 // aptrinsic('addListener', 'engagementCompleted', function(eventData)
 // {
 //   console.log(JSON.stringify(eventData));
