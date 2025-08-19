@@ -75,6 +75,7 @@ function navigate(form) {
       PANnumber: 13793,
       gender: "Female",
       age: randomAge,
+      first_login_date: new Date().toISOString(),
     },
     {
       //Account Fields
