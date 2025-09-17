@@ -98,6 +98,9 @@ function globalcontext() {
     });
   }
 }
+function handleMarket() {
+  aptrinsic("track", "market", { fruits: ["apple", "banana"] });
+}
 function handleYes() {
   aptrinsic("track", "track-yes", { respose: "yes" });
 }
