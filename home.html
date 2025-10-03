@@ -37,6 +37,10 @@
         }
       }
 
+      function trackLoad() {
+        aptrinsic("track", "Load", { IsPortableCase: "0" });
+      }
+
       // Call trackReferrer when the page loads
       window.onload = trackReferrer;
     </script>
@@ -100,6 +104,7 @@
       <button
         id="gs-help"
         title="help"
+        onclick="trackLoad"
         style="
           position: absolute;
           top: 250px;
