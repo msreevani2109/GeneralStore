@@ -51,7 +51,8 @@ function getLastName() {
 function navigate(form) {
   var username = document.getElementById("username").value;
   var accountid = document.getElementById("aid").value;
-  var id = username.substring(0, 6);
+  //var id = username.substring(0, 6);
+  var id = username;
   var name = username.split("@")[0];
   var lname = getLastName();
   // Generate random age between 18 and 65
