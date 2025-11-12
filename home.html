@@ -36,8 +36,17 @@
           console.log("no need of referrer");
         }
       }
+      function openPopup() {
+        document.getElementById("helpPopup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
 
+      function closePopup() {
+        document.getElementById("helpPopup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      }
       function trackLoad() {
+        openPopup();
         aptrinsic("track", "Load", { IsPortableCase: "0" });
       }
 
@@ -121,6 +130,15 @@
         ">
         Help
       </button>
+      <!-- Overlay and Popup -->
+      <div id="overlay"></div>
+      <div id="helpPopup">
+        <h3>Need Help?</h3>
+        <p>
+          This is your help information popup. You can add any content here.
+        </p>
+        <button onclick="closePopup()">Close</button>
+      </div>
     </div>
 
     <br />
