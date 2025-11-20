@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <script>
-      document
-        .getElementById("btn-home")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          Home();
-        });
+      window.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("btn-home")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            Home();
+          });
 
-      document
-        .getElementById("btn-about")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          About();
-        });
+        document
+          .getElementById("btn-about")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            About();
+          });
+      });
+
       //     function deleteAllCookiesAndRefresh() {
       //     // Delete all cookies using Aptrinsic
       //      aptrinsic("reset");

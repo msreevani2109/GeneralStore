@@ -39,10 +39,10 @@
 );
 //Gainsight PX Tag - end
 function Home() {
-  aptrinsic("set", "globalContext", { page: "Home" });
+  window.aptrinsic("set", "globalContext", { page: "Home" });
 }
 function About() {
-  aptrinsic("set", "globalContext", { page: "About" });
+  window.aptrinsic("set", "globalContext", { page: "About" });
 }
 function getLastName() {
   const alphabet = "ABCDEFGHIJKLMNOPRSTUVW";
