@@ -38,7 +38,12 @@
   }
 );
 //Gainsight PX Tag - end
-
+function Home() {
+  aptrinsic("set", "globalContext", { page: "Home" });
+}
+function Home() {
+  aptrinsic("set", "globalContext", { page: "About" });
+}
 function getLastName() {
   const alphabet = "ABCDEFGHIJKLMNOPRSTUVW";
   const randomIndex = Math.floor(Math.random() * alphabet.length);
