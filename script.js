@@ -41,7 +41,7 @@
 function Home() {
   aptrinsic("set", "globalContext", { page: "Home" });
 }
-function Home() {
+function About() {
   aptrinsic("set", "globalContext", { page: "About" });
 }
 function getLastName() {
