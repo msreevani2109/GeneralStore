@@ -30,9 +30,9 @@
   "https://web-sdk.aptrinsic.com/api/aptrinsic.js",
   "AP-VMEVYG8PSBR8-2",
   {
-    engagementChecksumFileUrl:
-      "Engagement_checksum_sreevani webapp_Production (23).json",
-    skipChecksumForEngagementIds: ["c5aaadd3-1d4f-49f9-a141-377489a885c8"],
+    // engagementChecksumFileUrl:
+    //   "Engagement_checksum_sreevani webapp_Production (23).json",
+    // skipChecksumForEngagementIds: ["c5aaadd3-1d4f-49f9-a141-377489a885c8"],
     //badgesUseFixedPosition: true
     //htmlSanitization: true,
     //htmlSanitizationAllowedDomains: ["//player.vimeo.com/video/1074485388"],
