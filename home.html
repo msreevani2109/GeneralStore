@@ -28,7 +28,11 @@
             About();
           });
       });
-
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdown");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
       //     function deleteAllCookiesAndRefresh() {
       //     // Delete all cookies using Aptrinsic
       //      aptrinsic("reset");
@@ -175,6 +179,31 @@
     </div>
 
     <br />
+    <br />
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div id="dropDown_PolicyTemplate">
+                <div class="dd-line">
+                  <div class="custom-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">
+                      Select Policy
+                    </button>
+                    <ul class="dropdown-list" style="display: none">
+                      <li>Basic</li>
+                      <li>Default</li>
+                      <li>Basic Security</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <iframe
       src="https://msreevani2109.github.io/pxdemofinal/login.html"
       style="
