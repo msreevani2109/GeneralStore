@@ -29,10 +29,24 @@
           });
       });
       function toggleDropdown() {
-        const dropdown = document.getElementById("dropdown");
-        dropdown.style.display =
-          dropdown.style.display === "block" ? "none" : "block";
+        const panel = document.getElementById("dropdownPanel");
+        panel.style.display =
+          panel.style.display === "block" ? "none" : "block";
       }
+
+      function selectItem(element) {
+        const text = element.getAttribute("data-text");
+        document.getElementById("selectedValue").innerText = text;
+        document.getElementById("dropdownPanel").style.display = "none";
+      }
+
+      // close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        const dropdown = document.getElementById("dropDown_PolicyTemplate");
+        if (!dropdown.contains(e.target)) {
+          document.getElementById("dropdownPanel").style.display = "none";
+        }
+      });
       //     function deleteAllCookiesAndRefresh() {
       //     // Delete all cookies using Aptrinsic
       //      aptrinsic("reset");
@@ -180,33 +194,49 @@
 
     <br />
     <br />
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <div id="dropDown_PolicyTemplate">
-                <div class="dd-line">
-                  <div class="custom-dropdown">
-                    <button class="dropdown-btn" onclick="toggleDropdown()">
-                      Select Policy
-                    </button>
-                    <ul
-                      id="dropdown"
-                      class="dropdown-list"
-                      style="display: none">
-                      <li>Basic</li>
-                      <li>Default</li>
-                      <li>Basic Security</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="gselect dropDown Middle" id="dropDown_PolicyTemplate">
+      <div class="dd-line" onclick="toggleDropdown()">
+        <div class="dd-text">
+          <span class="value" id="selectedValue">Basic Security</span>
+        </div>
+        <a class="dd-button active"></a>
+      </div>
+
+      <div class="panel left" id="dropdownPanel">
+        <div class="list">
+          <ul>
+            <li>
+              <a
+                class="gselect_a"
+                data-value="1"
+                data-text="Default"
+                onclick="selectItem(this)">
+                <span class="value">Default</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="gselect_a"
+                data-value="2"
+                data-text="Basic"
+                onclick="selectItem(this)">
+                <span class="value">Basic</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="gselect_a"
+                data-value="3"
+                data-text="Basic Security"
+                onclick="selectItem(this)">
+                <span class="value">Basic Security</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+
     <iframe
       src="https://msreevani2109.github.io/pxdemofinal/login.html"
       style="

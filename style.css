@@ -33,37 +33,51 @@
 h1 small {
   font-size: small;
 }
-.custom-dropdown {
+
+.gselect {
   position: relative;
-  width: 200px;
+  width: 160px;
+  font-family: Arial, sans-serif;
 }
 
-.dropdown-btn {
-  width: 100%;
-  padding: 8px;
+.dd-line {
+  border: 1px solid #ccc;
+  padding: 6px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.dropdown-list {
+.dd-button {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #333;
+}
+
+.panel {
   display: none;
   position: absolute;
   background: #fff;
   border: 1px solid #ccc;
   width: 100%;
+  z-index: 200;
+}
+
+.panel ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.dropdown-list li {
-  padding: 8px;
+.panel li a {
+  display: block;
+  padding: 6px;
   cursor: pointer;
 }
 
-.dropdown-list li:hover {
+.panel li a:hover {
   background-color: #f0f0f0;
-}
-
-.custom-dropdown:hover .dropdown-list {
-  display: block;
 }
