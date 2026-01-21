@@ -13,15 +13,15 @@
 //Gainsight PX Tag - start
 (function (n, t, a, e, co) {
   var i = "aptrinsic";
-  (n[i] =
+  ((n[i] =
     n[i] ||
     function () {
       (n[i].q = n[i].q || []).push(arguments);
     }),
-    (n[i].p = e);
+    (n[i].p = e));
   n[i].c = co;
   var r = t.createElement("script");
-  (r.async = !0), (r.src = a + "?a=" + e);
+  ((r.async = !0), (r.src = a + "?a=" + e));
   var c = t.getElementsByTagName("script")[0];
   c.parentNode.insertBefore(r, c);
 })(
@@ -34,9 +34,9 @@
     //   "Engagement_checksum_sreevani webapp_Production (23).json",
     // skipChecksumForEngagementIds: ["c5aaadd3-1d4f-49f9-a141-377489a885c8"],
     //badgesUseFixedPosition: true
-    // htmlSanitization: true,
+    htmlSanitization: true,
     // htmlSanitizationAllowedDomains: ["//player.vimeo.com/video/1074485388"],
-  }
+  },
 );
 //Gainsight PX Tag - end
 function Home() {
@@ -92,7 +92,7 @@ function navigate(form) {
       MSVID1: "",
       noservicesold: true,
       //testid: "aradhya",
-    }
+    },
   );
   globalcontext();
   //alert("logged in succesfully");
