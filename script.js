@@ -110,7 +110,7 @@ function globalcontext() {
 function handleLearn() {
   aptrinsic("track", "SreevaniPxTest");
 }
-function handleLearn() {
+function handleLearnTest() {
   aptrinsic("track", "SreevaniPxTestOne", { id: 1 });
 }
 function handleMarket() {
