@@ -107,6 +107,9 @@ function globalcontext() {
     });
   }
 }
+function handleLearn() {
+  aptrinsic("track", "SreevaniPxTest");
+}
 function handleMarket() {
   aptrinsic("track", "market", { fruits: ["apple", "banana"] });
 }
