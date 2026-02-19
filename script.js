@@ -110,6 +110,9 @@ function globalcontext() {
 function handleLearn() {
   aptrinsic("track", "SreevaniPxTest");
 }
+function handleLearn() {
+  aptrinsic("track", "SreevaniPxTestOne", { id: 1 });
+}
 function handleMarket() {
   aptrinsic("track", "market", { fruits: ["apple", "banana"] });
 }
