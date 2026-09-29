@@ -335,31 +335,6 @@
         top: 380px;
         border: 1px solid #ccc;
       "
-      srcdoc="
-        <html>
-          <head>
-            <script>
-              (function (n, t, a, e) {
-                function r(n) { return &quot;function&quot; == typeof n; }
-                var i = &quot;Aptrinsic&quot;, o = n.aptrinsic;
-                o || ((o = n.aptrinsic = function () { o._c.push(arguments); })._q = []), (o._c = []);
-                var s = t.createElement(&quot;script&quot;);
-                (s.type = &quot;text/javascript&quot;), (s.async = !0), (s.src = a);
-                var c = t.getElementsByTagName(&quot;script&quot;)[0];
-                c.parentNode.insertBefore(s, c);
-                var p = n[i]; p || (p = n[i] = o); p.p = e;
-                var u = [&quot;identify&quot;,&quot;track&quot;,&quot;addParentAccount&quot;,&quot;clearParentAccount&quot;,&quot;setGlobalContext&quot;,&quot;showSurvey&quot;,&quot;showQuestion&quot;,&quot;truSightSurvey&quot;,&quot;widget&quot;,&quot;aptrinsicApiHost&quot;,&quot;asnycInterval&quot;];
-                function l(n) { return function () { var t = Array.prototype.slice.call(arguments); o.push([n].concat(t)); }; }
-                for (var d = 0; d &lt; u.length; d++) o[u[d]] = l(u[d]);
-              })(window, document, &quot;https://web-sdk.aptrinsic.com/api/aptrinsic.js&quot;, &quot;AP-VMEVYG8PSBR8-2&quot;);
-            </script>
-          </head>
-          <body style='font-family: Roboto, sans-serif; text-align:center; padding-top: 40px;'>
-            <button id='btnhome' onclick=&quot;parent.openBotHome()&quot;>Bot Home</button>
-            <button id='btnlogin' onclick=&quot;parent.openBotLogin()&quot;>Bot Login</button>
-            <button id='btnreload' onclick=&quot;parent.reloadBotFrame()&quot;>Reload Bot</button>
-          </body>
-        </html>
-      "></iframe>
+      src="embedbot.html"></iframe>
   </body>
 </html>
