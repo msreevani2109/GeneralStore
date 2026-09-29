@@ -13,6 +13,56 @@
       rel="stylesheet" />
 
     <script src="script.js"></script>
+
+    <!-- Gainsight PX Install Tag -->
+    <script>
+      (function (n, t, a, e) {
+        function r(n) {
+          return "function" == typeof n;
+        }
+        var i = "Aptrinsic",
+          o = n.aptrinsic;
+        o ||
+          ((o = n.aptrinsic =
+            function () {
+              o._c.push(arguments);
+            })._q = []),
+          (o._c = []);
+        var s = t.createElement("script");
+        (s.type = "text/javascript"), (s.async = !0), (s.src = a);
+        var c = t.getElementsByTagName("script")[0];
+        c.parentNode.insertBefore(s, c);
+        var p = n[i];
+        p || (p = n[i] = o);
+        p.p = e;
+        var u = [
+          "identify",
+          "track",
+          "addParentAccount",
+          "clearParentAccount",
+          "setGlobalContext",
+          "showSurvey",
+          "showQuestion",
+          "truSightSurvey",
+          "widget",
+          "aptrinsicApiHost",
+          "asnycInterval",
+        ];
+        function l(n) {
+          return function () {
+            var t = Array.prototype.slice.call(arguments);
+            o.push([n].concat(t));
+          };
+        }
+        for (var d = 0; d < u.length; d++) o[u[d]] = l(u[d]);
+      })(
+        window,
+        document,
+        "https://web-sdk.aptrinsic.com/api/aptrinsic.js",
+        "AP-VMEVYG8PSBR8-2"
+      );
+    </script>
+
     <script>
       window.addEventListener("DOMContentLoaded", function () {
         document
@@ -91,6 +141,32 @@
 
       // Call trackReferrer when the page loads
       window.onload = trackReferrer;
+
+      // ---- Controls for the new named iframe (pxBotFrame) ----
+      function loadInFrame(url) {
+        var frame = document.getElementsByName("pxBotFrame")[0];
+        if (frame) {
+          frame.src = url;
+        }
+      }
+
+      function openBotHome() {
+        loadInFrame("https://msreevani2109.github.io/pxdemofinal/login.html");
+        aptrinsic("track", "BotFrameNavigation", { page: "home" });
+      }
+
+      function openBotLogin() {
+        loadInFrame("https://msreevani2109.github.io/pxdemofinal/login.html");
+        aptrinsic("track", "BotFrameNavigation", { page: "login" });
+      }
+
+      function reloadBotFrame() {
+        var frame = document.getElementsByName("pxBotFrame")[0];
+        if (frame) {
+          frame.src = frame.src;
+        }
+        aptrinsic("track", "BotFrameNavigation", { page: "reload" });
+      }
     </script>
   </head>
   <body>
@@ -238,13 +314,52 @@
     </div>
     <br><span class="fr-video fr-deletable fr-fvc fr-dvb fr-draggable fr-active" draggable="true"><iframe class="vidyard_iframe fr-draggable" title="Managing User Accounts in Forcepoint Security Gateway" src="//play.vidyard.com/pNQsa79PZ2ZFWZSYitTT7N.html?" width="640" height="360" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
 <br>
-    <iframe
+    <!-- <iframe
       src="https://msreevani2109.github.io/pxdemofinal/login.html"
       style="
         position: absolute;
         height: 600px;
         width: 800px;
         top: 300px;
+      "></iframe> -->
+
+    <!-- New iframe with buttons rendered INSIDE it via srcdoc -->
+    <br />
+    <iframe
+      name="pxBotFrame"
+      id="pxBotFrame"
+      style="
+        position: absolute;
+        height: 600px;
+        width: 800px;
+        top: 380px;
+        border: 1px solid #ccc;
+      "
+      srcdoc="
+        <html>
+          <head>
+            <script>
+              (function (n, t, a, e) {
+                function r(n) { return &quot;function&quot; == typeof n; }
+                var i = &quot;Aptrinsic&quot;, o = n.aptrinsic;
+                o || ((o = n.aptrinsic = function () { o._c.push(arguments); })._q = []), (o._c = []);
+                var s = t.createElement(&quot;script&quot;);
+                (s.type = &quot;text/javascript&quot;), (s.async = !0), (s.src = a);
+                var c = t.getElementsByTagName(&quot;script&quot;)[0];
+                c.parentNode.insertBefore(s, c);
+                var p = n[i]; p || (p = n[i] = o); p.p = e;
+                var u = [&quot;identify&quot;,&quot;track&quot;,&quot;addParentAccount&quot;,&quot;clearParentAccount&quot;,&quot;setGlobalContext&quot;,&quot;showSurvey&quot;,&quot;showQuestion&quot;,&quot;truSightSurvey&quot;,&quot;widget&quot;,&quot;aptrinsicApiHost&quot;,&quot;asnycInterval&quot;];
+                function l(n) { return function () { var t = Array.prototype.slice.call(arguments); o.push([n].concat(t)); }; }
+                for (var d = 0; d &lt; u.length; d++) o[u[d]] = l(u[d]);
+              })(window, document, &quot;https://web-sdk.aptrinsic.com/api/aptrinsic.js&quot;, &quot;AP-VMEVYG8PSBR8-2&quot;);
+            </script>
+          </head>
+          <body style='font-family: Roboto, sans-serif; text-align:center; padding-top: 40px;'>
+            <button onclick=&quot;parent.openBotHome()&quot;>Bot Home</button>
+            <button onclick=&quot;parent.openBotLogin()&quot;>Bot Login</button>
+            <button onclick=&quot;parent.reloadBotFrame()&quot;>Reload Bot</button>
+          </body>
+        </html>
       "></iframe>
   </body>
 </html>
