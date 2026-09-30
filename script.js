@@ -36,7 +36,9 @@
     //badgesUseFixedPosition: true
     // htmlSanitization: true,
     // htmlSanitizationAllowedDomains: ["//player.vimeo.com/video/1074485388"],
-    embeddedBotDelay: 3000,
+    //embeddedBotDelay: 3000,
+    cssNonce: "abc123XYZ",
+    widgetNonce: "abc123XYZ",
   },
 );
 //Gainsight PX Tag - end
