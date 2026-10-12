@@ -25,22 +25,12 @@
 <style>
   :root {
     --ink: #1c2b2a;
-    --paper: #f7f9f8;
     --teal: #0f766e;
     --teal-dark: #0b5a54;
     --line: #d5dedc;
     --user: #dff1ee;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    color: var(--ink);
-    background: var(--paper);
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-  }
+
   .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 24px; }
   .btn {
     font: inherit;
@@ -69,6 +59,9 @@
     display: flex; flex-direction: column; overflow: hidden;
     transform: translateY(20px); opacity: 0; visibility: hidden;
     transition: transform .2s ease, opacity .2s ease, visibility .2s;
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    z-index: 1000;
   }
   .chat.open { transform: none; opacity: 1; visibility: visible; }
   .chat header {
@@ -94,74 +87,10 @@
   }
   @media (prefers-reduced-motion: reduce) { .chat { transition: none; } }
 </style>
-<script>
-  const chat = document.getElementById('chat');
-  const messages = document.getElementById('messages');
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('chat-input');
-  const topicLabel = document.getElementById('chat-topic');
-  let currentTopic = null;
-
-  function addMessage(text, who) {
-    const el = document.createElement('div');
-    el.className = 'msg ' + who;
-    el.textContent = text;
-    messages.appendChild(el);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function openBot(topic) {
-    // Reset the conversation if the person opened the bot from a different button
-    if (topic !== currentTopic) {
-      messages.innerHTML = '';
-      currentTopic = topic;
-      topicLabel.textContent = topic;
-      addMessage('Hi! You\'re chatting with ' + topic + '. How can I help?', 'bot');
-    }
-    chat.classList.add('open');
-    chat.setAttribute('aria-hidden', 'false');
-    input.focus();
-  }
-
-  function closeBot() {
-    chat.classList.remove('open');
-    chat.setAttribute('aria-hidden', 'true');
-  }
-
-  // Both buttons use the same handler
-  document.querySelectorAll('[data-open-bot]').forEach(btn => {
-    btn.addEventListener('click', () => openBot(btn.dataset.topic));
-  });
-  document.getElementById('chat-close').addEventListener('click', closeBot);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBot(); });
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const text = input.value.trim();
-    if (!text) return;
-    addMessage(text, 'user');
-    input.value = '';
-    const reply = await getBotReply(text, currentTopic);
-    addMessage(reply, 'bot');
-  });
-
-  // ===== CONNECT YOUR REAL BOT HERE =====
-  // Replace this placeholder with a call to your backend / AI API.
-  async function getBotReply(message, topic) {
-    // Example:
-    // const res = await fetch('/api/chat', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ message, topic })
-    // });
-    // const data = await res.json();
-    // return data.reply;
-    return 'You said: "' + message + '". Connect getBotReply() to your bot to get real answers.';
-  }
-</script>
-
 
     <script src="script.js"></script>
+    <!-- Chat bot logic: external file so it passes the CSP; defer waits for the page body -->
+    <script src="chatbot.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -251,28 +180,27 @@
       <button type="submit" id="btn-submit">submit</button>
     </form>
     <button id="check">Check</button>
-<!-- ===== THE TWO BUTTONS ===== -->
-  <div class="actions">
-    <button class="btn btn-primary" data-open-bot data-topic="Support">Get support</button>
-    <button class="btn btn-secondary" data-open-bot data-topic="Sales">Talk to sales</button>
-  </div>
 
-  <!-- ===== THE BOT ===== -->
-  <section class="chat" id="chat" role="dialog" aria-label="Chat bot" aria-hidden="true">
-    <header>
-      <div>
-        <strong>Assistant</strong>
-        <small id="chat-topic">How can I help?</small>
-      </div>
-      <button id="chat-close" aria-label="Close chat">&times;</button>
-    </header>
-    <div class="messages" id="messages" aria-live="polite"></div>
-    <form id="chat-form">
-      <input id="chat-input" type="text" placeholder="Type your message" autocomplete="off" required />
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <!-- ===== THE TWO BUTTONS ===== -->
+    <div class="actions">
+      <button type="button" class="btn btn-primary" data-open-bot data-topic="Support">Get support</button>
+      <button type="button" class="btn btn-secondary" data-open-bot data-topic="Sales">Talk to sales</button>
+    </div>
 
-
+    <!-- ===== THE BOT ===== -->
+    <section class="chat" id="chat" role="dialog" aria-label="Chat bot" aria-hidden="true">
+      <header>
+        <div>
+          <strong>Assistant</strong>
+          <small id="chat-topic">How can I help?</small>
+        </div>
+        <button type="button" id="chat-close" aria-label="Close chat">&times;</button>
+      </header>
+      <div class="messages" id="messages" aria-live="polite"></div>
+      <form id="chat-form">
+        <input id="chat-input" type="text" placeholder="Type your message" autocomplete="off" required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </body>
 </html>
