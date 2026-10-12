@@ -94,6 +94,73 @@
   }
   @media (prefers-reduced-motion: reduce) { .chat { transition: none; } }
 </style>
+<script>
+  const chat = document.getElementById('chat');
+  const messages = document.getElementById('messages');
+  const form = document.getElementById('chat-form');
+  const input = document.getElementById('chat-input');
+  const topicLabel = document.getElementById('chat-topic');
+  let currentTopic = null;
+
+  function addMessage(text, who) {
+    const el = document.createElement('div');
+    el.className = 'msg ' + who;
+    el.textContent = text;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function openBot(topic) {
+    // Reset the conversation if the person opened the bot from a different button
+    if (topic !== currentTopic) {
+      messages.innerHTML = '';
+      currentTopic = topic;
+      topicLabel.textContent = topic;
+      addMessage('Hi! You\'re chatting with ' + topic + '. How can I help?', 'bot');
+    }
+    chat.classList.add('open');
+    chat.setAttribute('aria-hidden', 'false');
+    input.focus();
+  }
+
+  function closeBot() {
+    chat.classList.remove('open');
+    chat.setAttribute('aria-hidden', 'true');
+  }
+
+  // Both buttons use the same handler
+  document.querySelectorAll('[data-open-bot]').forEach(btn => {
+    btn.addEventListener('click', () => openBot(btn.dataset.topic));
+  });
+  document.getElementById('chat-close').addEventListener('click', closeBot);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBot(); });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+    const reply = await getBotReply(text, currentTopic);
+    addMessage(reply, 'bot');
+  });
+
+  // ===== CONNECT YOUR REAL BOT HERE =====
+  // Replace this placeholder with a call to your backend / AI API.
+  async function getBotReply(message, topic) {
+    // Example:
+    // const res = await fetch('/api/chat', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ message, topic })
+    // });
+    // const data = await res.json();
+    // return data.reply;
+    return 'You said: "' + message + '". Connect getBotReply() to your bot to get real answers.';
+  }
+</script>
+
+
     <script src="script.js"></script>
   </head>
   <body>
@@ -205,72 +272,6 @@
       <button type="submit">Send</button>
     </form>
   </section>
-
-<script>
-  const chat = document.getElementById('chat');
-  const messages = document.getElementById('messages');
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('chat-input');
-  const topicLabel = document.getElementById('chat-topic');
-  let currentTopic = null;
-
-  function addMessage(text, who) {
-    const el = document.createElement('div');
-    el.className = 'msg ' + who;
-    el.textContent = text;
-    messages.appendChild(el);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function openBot(topic) {
-    // Reset the conversation if the person opened the bot from a different button
-    if (topic !== currentTopic) {
-      messages.innerHTML = '';
-      currentTopic = topic;
-      topicLabel.textContent = topic;
-      addMessage('Hi! You\'re chatting with ' + topic + '. How can I help?', 'bot');
-    }
-    chat.classList.add('open');
-    chat.setAttribute('aria-hidden', 'false');
-    input.focus();
-  }
-
-  function closeBot() {
-    chat.classList.remove('open');
-    chat.setAttribute('aria-hidden', 'true');
-  }
-
-  // Both buttons use the same handler
-  document.querySelectorAll('[data-open-bot]').forEach(btn => {
-    btn.addEventListener('click', () => openBot(btn.dataset.topic));
-  });
-  document.getElementById('chat-close').addEventListener('click', closeBot);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBot(); });
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const text = input.value.trim();
-    if (!text) return;
-    addMessage(text, 'user');
-    input.value = '';
-    const reply = await getBotReply(text, currentTopic);
-    addMessage(reply, 'bot');
-  });
-
-  // ===== CONNECT YOUR REAL BOT HERE =====
-  // Replace this placeholder with a call to your backend / AI API.
-  async function getBotReply(message, topic) {
-    // Example:
-    // const res = await fetch('/api/chat', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ message, topic })
-    // });
-    // const data = await res.json();
-    // return data.reply;
-    return 'You said: "' + message + '". Connect getBotReply() to your bot to get real answers.';
-  }
-</script>
 
 
   </body>
